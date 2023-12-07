@@ -98,7 +98,7 @@ function promiseEx(networkConnection) {
 
 async function handlePromiseAsync() {
     try {
-        console.log(await promiseEx());
+        console.log(await promiseEx(networkStatus));
         console.log("Data received");
     } catch (err) {
         console.log(err);
