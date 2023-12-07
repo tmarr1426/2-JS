@@ -113,3 +113,22 @@ let resultOfCoffeeStatus = returnToMeTheResultOfHavingCoffee();
 // the function call being assigned here is hanging onto the returned value that we see above
 
 console.log(resultOfCoffeeStatus)
+
+function divisible (dividend, divisor) {
+    if (dividend % divisor === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  
+  divisible (2, 2);
+  
+  console.log (divisible (2, 2));
+
+function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+  
+  capitalize("tomato");
+  console.log(capitalize("tomato"));
