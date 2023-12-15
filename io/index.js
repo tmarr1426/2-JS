@@ -98,10 +98,10 @@ const rl = readline.createInterface({
 // }
 
 // const start = async () => {
-//     // .get data
+//      .get data
 //     let response = await ask("what is your favorite car?");
 //     console.log("Our data", response);
-//     // continue task
+//      continue task
 // };
 
 // start();
@@ -145,9 +145,21 @@ const rl = readline.createInterface({
 async function ask (question){
     return new Promise((resolve, reject) => {
         rl.question(question + "\n", (userInput) => {
-            console.log("your input:", userInput);
-        })
-    })
+            resolve(userInput);
+        });
+    });
 }
 
-ask("What's your age?");
+// Using async to allow waiting for our value to be present.
+
+async function start() {
+    const firstQAnswer = await ask("What is your name?");
+    console.log("Answer to first question is:", firstQAnswer);
+
+    const secondQAnswer = await ask("What is your age?");
+    console.log("Answer to second question is:", secondQAnswer);
+
+    rl.close();
+}
+
+start();
